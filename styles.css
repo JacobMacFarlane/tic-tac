@@ -63,7 +63,11 @@
      .tile {
     border: solid black;
     width: 18vw;
-    height: 18vh
+    height: 18vh;
+    font-size: 2em;
+    display:flex;
+    justify-content:center;
+    align-items: center;
 }
 .X,
 .O {
@@ -91,5 +95,12 @@
 #tile9 {
     border-bottom: none;
 }
+.ramona-hover:hover::after {
+    content: "X";
+    opacity: 0.4;
+}
 
-
+.scott-hover:hover::after {
+    content: "O";
+    opacity: 0.4;
+}
