@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tic Tac Toe</title>   
+</head>
+<body>
+<main class="whole-container"> 
+    <section class="left-side" id="left-color">
+        <section id="left-container">
+            <section>
+                <h1 class="player1">
+                    player1
+                </h1>
+                <span class="format-wins">
+                    <h2 class="amount-wins1">
+                     0
+                    </h2>
+                    <h2>
+                     wins
+                    </h2>
+                </span>        
+            </section>
+        </section>
+    </section>
+    <section class="middle">
+        <section id="middle-container">
+            <h1 class="current-player">
+                Its player1 turn
+            </h1>
+                <section class="lower-middle">
+                    <section class="playing-field">
+                        <div class="tile" id="tile1"></div>
+                        <div class="tile" id="tile2"></div>
+                        <div class="tile" id="tile3"></div>
+                        <div class="tile" id="tile4"></div>
+                        <div class="tile" id="tile5"></div>
+                        <div class="tile" id="tile6"></div>
+                        <div class="tile" id="tile7"></div>
+                        <div class="tile" id="tile8"></div>
+                        <div class="tile" id="tile9"></div>
+                    </section>
+                </section>
+        </section>
+    </section>
+    <section class="right-side" id="right-color">
+        <section id="right-container">
+            <section>
+                <h1 class="player2">
+                    player2
+                </h1>
+                <span class="format-wins">
+                    <h2 class="amount-wins2">
+                        0
+                    </h2>
+                    <h2>
+                        wins
+                    </h2>
+                </span>        
+            </section>
+        </section>
+    </section> 
+</main>
+    <script src="player.js"></script>
+    <script src="game.js"></script>    
+    <script src="logic.js"></script>
+</body>
+</html>
