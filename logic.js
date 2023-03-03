@@ -64,7 +64,8 @@ function displayWinner() {
     (currentGame.gameOver === true && currentGame.draw === true) {
         startDisplay.classList.add('hidden');
         draw.classList.remove('hidden')
-    }
+    } 
+   
 }
 
 function clearGameBoard() {
