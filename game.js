@@ -32,6 +32,7 @@ class Game{
     checkWin() {
         for (var i = 0; i < this.winnerCombos.length; i++) { 
             const combo = this.winnerCombos[i].combo
+            const filledBoard = this.currentBoard.length
             const win1 = this.currentBoard[combo[0]-1]
             //combo[0] is targeting the array of numbers in winnerCombos with the first index position adn
             // then subtracting one because index position begins at 0 and our tiles are 1-9
@@ -45,9 +46,13 @@ class Game{
                 this.gameOver = true
                 this.winner.increaseWins()
                 return this.winner
-            }
-        }   
-     }
+            }  else if (this.currentBoard.length === 9) {
+               this.gameOver = true
+               this.draw = true
+               this.winner = null
+           }
+        }
+    }
     resetGameBoard() {
         if (this.gameOver = true) {
             this.currentBoard.fill(null)
