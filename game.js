@@ -5,6 +5,8 @@ class Game{
         this.turn= this.player1;//default player1
         this.draw= false
         this.winner= null
+        this.turnsTaken1 = []
+        this.turnsTaken2 = []
         this.gameOver = false
         this.currentBoard=[]
         this.winnerCombos= [
@@ -32,7 +34,7 @@ class Game{
     checkWin() {
         for (var i = 0; i < this.winnerCombos.length; i++) { 
             const combo = this.winnerCombos[i].combo
-            const filledBoard = this.currentBoard.length
+            // const filledBoard = this.currentBoard.length
             const win1 = this.currentBoard[combo[0]-1]
             //combo[0] is targeting the array of numbers in winnerCombos with the first index position adn
             // then subtracting one because index position begins at 0 and our tiles are 1-9
@@ -40,22 +42,28 @@ class Game{
             // we are doing this so we can run an if statement to see if a win is met
             const win2 = this.currentBoard[combo[1]-1]
             const win3 = this.currentBoard[combo[2]-1]
-            
             if ( win1 != null && win1 === win2 && win1 === win3) {
                 this.winner = this.turn
                 this.gameOver = true
                 this.winner.increaseWins()
+                setTimeout(this.resetGameBoard, 2000)
                 return this.winner
-            }  else if (this.currentBoard.length === 9 ) {
+            }  else if (this.turnsTaken1.length === 5 || this.turnsTaken2.length === 5 && this.winner === null) {
                this.gameOver = true
                this.draw = true
                this.winner = null
+               setTimeout(this.resetGameBoard, 2000)
            }
         }
     }
     resetGameBoard() {
-        if (this.gameOver = true) {
-            this.currentBoard.fill(null)
-        }
+            this.draw = false
+            this.winner = null
+            this.gameOver = false
+           this.currentBoard = [];
+           this.turnsTaken1 = [];
+           this.turnsTaken2 = []
+        console.log(this.currentBoard)
+        console.log(this.turnsTaken1)
     }
 }
