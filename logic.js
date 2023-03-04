@@ -10,15 +10,10 @@ var currentGame = new Game()
 var currentTurn = currentGame.player1 // this is establishing that the current turn is Ramona
 
 
-// currentGame.currentBoard = Array(tiles.length) // This is setting the board as a constant
-// // by using Array it calls forth the length of our tiles from line 1
-// currentGame.currentBoard.fill(null) // This is what im going to use to reset game board
-// console.log(currentGame.currentBoard)
-// console.log(currentGame.player1)
-// console.log(currentGame.player2)
+
+
 tiles.forEach((tile) => tile.addEventListener("click", useTurn))
-// this is saying that for each tile i have contained in my constant tile,
-// that i can run my event listener for useTurn
+
 var currentPlayerDisplay = document.querySelector('.display-player')
 if (currentTurn === currentGame.player1) {
     currentPlayerDisplay.innerHTML = `<img src="https://ih1.redbubble.net/image.175180605.1876/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt="This is an X" width="50" height="">`
@@ -34,19 +29,21 @@ function useTurn(event) {
     if (tile.innerText != "") {
         return;
     }
-  
     if (currentTurn === currentGame.player1) {
         tile.innerHTML =`<img src="https://ih1.redbubble.net/image.175180605.1876/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt="This is an X" width="50" height="">`
         currentGame.currentBoard[tileNumber - 1] = currentGame.player1; 
+        currentGame.turnsTaken1.push(currentGame.player1)
         currentPlayerDisplay.innerHTML = `<img src="https://ih1.redbubble.net/image.407171044.0078/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt="This is an O" width="50" height="">`
         currentTurn = currentGame.player2
         currentGame.checkWin()
         displayWinner()
         increaseDisplayWins()
+
         currentGame.takeTurn()
     } else { 
         tile.innerHTML = `<img src="https://ih1.redbubble.net/image.407171044.0078/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt="This is an O" width="50" height="">`
         currentGame.currentBoard[tileNumber - 1] = currentGame.player2;
+        currentGame.turnsTaken2.push(currentGame.player2) 
         currentPlayerDisplay.innerHTML = `<img src="https://ih1.redbubble.net/image.175180605.1876/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt="This is an X" width="50" height="">`
         currentTurn = currentGame.player1
         currentGame.checkWin()
@@ -57,17 +54,22 @@ function useTurn(event) {
 }
 function displayWinner() {
     if (currentGame.gameOver === true && currentGame.winner === currentGame.player1) {
-       console.log('hello')
         startDisplay.classList.add('hidden')
         win1Display.classList.remove("hidden") 
+        setTimeout(clearGameBoard, 2000)
+        console.log('string1')
     } else if 
     (currentGame.gameOver === true && currentGame.winner === currentGame.player2) {
         startDisplay.classList.add('hidden');
         win2Display.classList.remove("hidden")
+        setTimeout(clearGameBoard, 2000)
+        console.log('string2')
     } else if
     (currentGame.gameOver === true && currentGame.draw === true) {
         startDisplay.classList.add('hidden');
         draw.classList.remove('hidden')
+        setTimeout(clearGameBoard, 2000)
+        console.log('string3')
     } 
    
 }
@@ -83,6 +85,12 @@ function increaseDisplayWins() {
 
 
 function clearGameBoard() {
+    currentGame.resetGameBoard()
+tiles.forEach((tile) => {
+    tile.innerHTML = ''})
+    win2Display.classList.add("hidden")
+    win1Display.classList.add("hidden")
+    // draw.classList.add('hidden')
+startDisplay.classList.remove('hidden')
 
-    currentGame.currentBoard.fill(null)
 }
