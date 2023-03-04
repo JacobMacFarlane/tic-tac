@@ -46,7 +46,7 @@ class Game{
                 this.gameOver = true
                 this.winner.increaseWins()
                 return this.winner
-            }  else if (this.currentBoard.length === 9) {
+            }  else if (this.currentBoard.length === 9 ) {
                this.gameOver = true
                this.draw = true
                this.winner = null
