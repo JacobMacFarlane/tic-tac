@@ -57,13 +57,18 @@ class Game{
         }
     }
     resetGameBoard() {
+        if (this.winner === this.player1) {
+            this.turn = this.player2
+        } else if (this.winner === this.player2){
+            this.turn = this.player1
+        } else if (this.draw === true) {
+            this.turn = this.player2
+        }
             this.draw = false
             this.winner = null
             this.gameOver = false
            this.currentBoard = [];
            this.turnsTaken1 = [];
            this.turnsTaken2 = []
-        console.log(this.currentBoard)
-        console.log(this.turnsTaken1)
     }
 }
