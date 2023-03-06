@@ -1,64 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Tic Tac Toe</title>   
-</head>
-<body>
-<main class="whole-container"> 
-    <section class="left-side" id="left-color">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Tic Tac Toe</title>
+  </head>
+  <body>
+    <main class="whole-container">
+      <section class="left-side" id="left-color">
         <section id="left-container">
-            <section>
-                <section class="X">
-                    <img src="https://ih1.redbubble.net/image.175180605.1876/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt="This is an X" width="50" height="">
-                </section>
-                <section class="win-counter">
-                    <span class="wins1" id="format-wins">0</span> wins 
-                </section>
+          <section>
+            <section class="X">
+              <img
+                src="https://ih1.redbubble.net/image.175180605.1876/st,small,507x507-pad,600x600,f8f8f8.u2.jpg"
+                alt="This is an X"
+                width="50"
+                height=""
+              />
             </section>
+            <section class="win-counter">
+              <span class="wins1" id="format-wins">0</span> wins
+            </section>
+          </section>
         </section>
-    </section>
-    <section class="middle">
+      </section>
+      <section class="middle">
         <section id="middle-container">
-            <section class="middle-display">
-                <section class="start-display">
-                    Its<span class="display-player player1"><img src="" alt=""></span>'s turn
-                </section>
-                <span class="winner1 hidden"> <img src="https://ih1.redbubble.net/image.175180605.1876/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt="This is an X" width="50" height="">has won!</span> 
-                <span class="winner2 hidden"> <img src="https://ih1.redbubble.net/image.407171044.0078/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt="This is an O" width="50" height="">has won!</span>
-                <span class="draw hidden"> No one has won</span>
+          <section class="middle-display">
+            <section class="start-display">
+              Its<span class="display-player player1"
+                ><img src="" alt="" /></span
+              >'s turn
             </section>
-            <section class="playing-field">
-                    <div class="tile" id="tile1" data-index="1"></div>
-                    <div class="tile" id="tile2" data-index="2"></div>
-                    <div class="tile" id="tile3" data-index="3"></div>
-                    <div class="tile" id="tile4" data-index="4"></div>
-                    <div class="tile" id="tile5" data-index="5"></div>
-                    <div class="tile" id="tile6" data-index="6"></div>
-                    <div class="tile" id="tile7" data-index="7"></div>
-                    <div class="tile" id="tile8" data-index="8"></div>
-                    <div class="tile" id="tile9" data-index="9"></div>
-             </section>
+            <span class="winner1 hidden">
+              <img
+                src="https://ih1.redbubble.net/image.175180605.1876/st,small,507x507-pad,600x600,f8f8f8.u2.jpg"
+                alt="This is an X"
+                width="50"
+                height=""
+              />has won!</span
+            >
+            <span class="winner2 hidden">
+              <img
+                src="https://ih1.redbubble.net/image.407171044.0078/st,small,507x507-pad,600x600,f8f8f8.u2.jpg"
+                alt="This is an O"
+                width="50"
+                height=""
+              />has won!</span
+            >
+            <span class="draw hidden"> No one has won</span>
+          </section>
+          <section class="playing-field">
+            <div class="tile" id="tile1" data-index="1"></div>
+            <div class="tile" id="tile2" data-index="2"></div>
+            <div class="tile" id="tile3" data-index="3"></div>
+            <div class="tile" id="tile4" data-index="4"></div>
+            <div class="tile" id="tile5" data-index="5"></div>
+            <div class="tile" id="tile6" data-index="6"></div>
+            <div class="tile" id="tile7" data-index="7"></div>
+            <div class="tile" id="tile8" data-index="8"></div>
+            <div class="tile" id="tile9" data-index="9"></div>
+          </section>
         </section>
-    </section>
-    <section class="right-side" id="right-color">
+      </section>
+      <section class="right-side" id="right-color">
         <section id="right-container">
-            <section>
-               <section class="O">
-                    <img src="https://ih1.redbubble.net/image.407171044.0078/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt="This is an O" width="50" height="">
-               </section>
-                <section class="win-counter">
-                    <span class="wins2" id="format-wins">0</span> wins 
-                </section>
+          <section>
+            <section class="O">
+              <img
+                src="https://ih1.redbubble.net/image.407171044.0078/st,small,507x507-pad,600x600,f8f8f8.u2.jpg"
+                alt="This is an O"
+                width="50"
+                height=""
+              />
             </section>
+            <section class="win-counter">
+              <span class="wins2" id="format-wins">0</span> wins
+            </section>
+          </section>
         </section>
-    </section> 
-</main>
+      </section>
+    </main>
     <script src="player.js"></script>
-    <script src="game.js"></script>    
+    <script src="game.js"></script>
     <script src="logic.js"></script>
-</body>
+  </body>
 </html>
